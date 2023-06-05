@@ -21,8 +21,16 @@ function App() {
       <div className='container'>
         <button
           onClick={() => {
-            console.log('Stringified Version', JSON.stringify(scoreObject.current));
-            console.log('Plain Object Version', scoreObject.current);
+            console.log(
+              '%cStringified Version: \n',
+              'background:#222; color: #bada55;',
+              JSON.stringify(scoreObject.current)
+            );
+            console.log(
+              '%cPlain Object Version:',
+              'background:#222; color: #bada55;',
+              scoreObject.current
+            );
             alert('Open the console to see the result.');
           }}>
           Submit
