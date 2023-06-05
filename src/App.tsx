@@ -13,17 +13,21 @@ function App() {
   return (
     <>
       <h1>Aplikasi Penilaian Mahasiswa</h1>
-      <div className='scoresWrapper'>
+      <div className='container'>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((comp) => (
-          <StudentScore studentNum={comp} scoreObject={scoreObject} />
+          <StudentScore studentNum={comp} scoreObject={scoreObject} key={comp} />
         ))}
       </div>
-      <button
-        onClick={() => {
-          console.log(scoreObject.current);
-        }}>
-        Submit
-      </button>
+      <div className='container'>
+        <button
+          onClick={() => {
+            console.log('Stringified Version', JSON.stringify(scoreObject.current));
+            console.log('Plain Object Version', scoreObject.current);
+            alert('Open the console to see the result.');
+          }}>
+          Submit
+        </button>
+      </div>
     </>
   );
 }
